@@ -3,17 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https: //fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/style.css" />
+    <script src="/js/main.js" type="module"></script>
     <title>Овощи Online</title>
   </head>
   <body>
@@ -35,68 +30,60 @@
           </ul>
           <a href="#" class="basket">
             <i class="material-icons">shopping_cart</i>
+            <p class="basket_text">58</p>
           </a>
-          <button class="registration">Регистрация</button>
+          <button class="registration" id="reg">
+            <a href="#">Регистрация</a>
+          </button>
+          <div class="modalBackground">
+            <div class="modalActive">
+                <div class="modalClose">
+                  <i class="material-icons">cancel</i>
+                </div>
+                <div class="modalWindow">
+                  <form id="form" action="#" novalidate>
+                    <div class="text-field">
+                      <label class="text-field__label" for="firstname">Имя*</label>
+                      <input class="text-field__input" type="text" name="firstname" id="firstname" required>
+                      <div class="text-field__message"></div>
+                    </div>
+                    <div class="text-field">
+                      <label class="text-field__label" for="lastname">Фамилия*</label>
+                      <input class="text-field__input" type="text" name="lastname" id="lastname" required>
+                      <div class="text-field__message"></div>
+                    </div>
+                    <div class="text-field">
+                      <label class="text-field__label" for="email">Email*</label>
+                      <input class="text-field__input" type="email" name="email" id="email" required>
+                      <div class="text-field__message"></div>
+                    </div>
+                    <div class="text-field">
+                      <label class="text-field__label" for="city">Город</label>
+                      <input class="text-field__input" type="text" name="city" id="city">
+                      <div class="text-field__message"></div>
+                    </div>
+                    <div class="text-field">
+                      <label class="text-field__label" for="number">Номер телефона</label>
+                      <input class="text-field__input" type="number" name="number" id="number" min="1" max="10" step="1" required>
+                      <div class="text-field__message"></div>
+                    </div>
+                    <button type="submit" class="subBtn" value="Отправить">Отправить</button>
+                  </form>
+                </div>
+            </div>
+        </div>
         </div>
       </div>
     </header>
     <main class="main">
       <div class="container">
         <section class="main__img">
-          <button class="main__btn">Заказать</button>
+          <button class="main__btn" id="zakaz">Заказать</button>
         </section>
         <section class="main__content">
           <div class="container">
             <h3 class="main__title">Овощи и Фрукты</h3>
-            <div class="main__list">
-              <div class="main__list-item">
-                <div class="item__img">
-                    <img src="/img/grusha.png" alt="">
-                </div>
-                <div class="item__text1">Груша</div>
-                <div class="item__text2">Летний урожай 2024</div>
-                <div class="item__price">1000 руб.</div>
-              </div>
-              <div class="main__list-item">
-                <div class="item__img">
-                    <img src="/img/редис.png" alt="">
-                </div>
-                <div class="item__text1">Редис</div>
-                <div class="item__text2">Летний урожай 2024</div>
-                <div class="item__price">300 руб.</div>
-              </div>
-              <div class="main__list-item">
-                <div class="item__img">
-                    <img src="/img/арбуз.png" alt="">
-                </div>
-                <div class="item__text1">Арбуз</div>
-                <div class="item__text2">Летний урожай 2024</div>
-                <div class="item__price">1500 руб.</div>
-              </div>
-              <div class="main__list-item">
-                <div class="item__img">
-                    <img src="/img/грибы.png" alt="">
-                </div>
-                <div class="item__text1">Грибы</div>
-                <div class="item__text2">Летний урожай 2024</div>
-                <div class="item__price">390 руб.</div>
-              </div>
-              <div class="main__list-item">
-                <div class="item__img">
-                    <img src="/img/тыква.png" alt="">
-                </div>
-                <div class="item__text1">Тыква</div>
-                <div class="item__text2">Летний урожай 2024</div>
-                <div class="item__price">2000 руб.</div>
-              </div>
-              <div class="main__list-item">
-                <div class="item__img">
-                    <img src="/img/черешня.png" alt="">
-                </div>
-                <div class="item__text1">Черешня</div>
-                <div class="item__text2">Летний урожай 2024</div>
-                <div class="item__price">1200 руб.</div>
-              </div>
+            <div class="main__list" id="list">
             </div>
           </div>
         </section>
